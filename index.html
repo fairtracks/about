@@ -1,61 +1,271 @@
-<p>&nbsp;</p>
-<div style="margin: 40px;">
-<p>&nbsp;</p>
-<h1>FAIRification of Genomic Tracks</h1>
-<h2>ELIXIR Implementation Study 2018-2019 (<em><a href="https://elixir-europe.org/about-us/commissioned-services/fairification-genomic-tracks" target="_blank" rel="noopener">link</a>)</em></h2>
-<p><img style="width: 5%;" src="elixir_logo_for_web.jpg" /></p>
-<p>FAIR track metadata - The FAIRification of Genomic Tracks Implementation Study is focused on &ldquo;FAIRifying&rdquo; the metadata related to genomic annotation track files contained in track hubs. To achieve this, we have developed a common data model and technical solutions compatible with the existing TrackHub exchange format for genome browser tracks and implemented demonstrators to show the feasibility of this proposal across systems and programming languages. For an overview of this Implementation Study, please take a look at our latest poster: <a href="Gundersen_Elixir_all_hands_2019_FAIRification.pdf">FAIRification of Genomic Tracks</a></p>
-<p>&nbsp;</p>
-<p><strong>FAIRtracks</strong></p>
-<p>FAIRtracks is a JSON Schema defining a minimal standard for genomic track metadata. FAIRtracks is supported by the TrackHub registry, the TrackFind metadata search and curation engine and the downstream track analysis tools GSuite HyperBrowser and EPICO.</p>
-<p>GitHub repository:&nbsp;<a href="https://github.com/fairtracks/fairtracks_standard">https://github.com/fairtracks/fairtracks_standard</a></p>
-<p><img style="width: 15%;" src="FairTracks logo.png" /></p>
-<p>&nbsp;</p>
-<p><strong>FAIRtracks validator service</strong></p>
-<p>FAIRification of Genomic Data Tracks JSON Schema validator</p>
-<p>URL:&nbsp;<a href="http://fairtracks.bsc.es/api/">http://fairtracks.bsc.es/api/</a></p>
-<p>GitHub repository:&nbsp;<a href="https://github.com/fairtracks/fairtracks_validator">https://github.com/fairtracks/fairtracks_validator</a></p>
-<div style="width: 100%; clear: both;">
-<div style="width: 45%; clear: left; float: left;">
-<p>Using REST API from command line (screencast):&nbsp;<a href="https://asciinema.org/a/279246">https://asciinema.org/a/279246</a></p>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="fairtracks.css">
+</head>
+<body>
+<div class="nobck">
+    <div class="section center row">
+        <img class="left_img" src="elixir_logo_for_web.jpg"/>
+        <div>
+            <h1>FAIRification of Genomic Tracks</h1>
+            <h2>ELIXIR Implementation Study 2018-2019</h2>
+            </a>
+        </div>
+    </div>
 </div>
-<div style="width: 45%; clear: right; float: right;">
-<p>Installing and using command line validator (screencast):&nbsp;<a href="https://asciinema.org/a/279252">https://asciinema.org/a/279252</a></p>
+<div class="bck">
+    <div class="section">
+        <p>
+            <strong>FAIR track metadata</strong>
+            - FAIRification of Genomic Tracks is an
+            <a href="https://elixir-europe.org/about-us/commissioned-services/fairification-genomic-tracks"
+               target="_blank" rel="noopener">
+                ELIXIR Implementation Study
+            </a>
+            focused on &ldquo;FAIRifying&rdquo; the metadata related to genomic annotation
+            track files contained in track hubs. To achieve this, we have developed a
+            common data model and technical solutions compatible with the existing TrackHub
+            exchange format for genome browser tracks and implemented demonstrators to show the
+            feasibility of this proposal across systems and programming languages.
+        </p>
+    </div>
 </div>
+
+<div class="nobck">
+    <div class="section center">
+        <h2>Overview of the implemented FAIRtracks infrastructure</h2>
+        <img class="paddingbottom" style="width: 60vw" src="FAIRification%20overview.png"/>
+    </div>
 </div>
-<div style="width: 100%; clear: both;">&nbsp;</div>
-<p><strong>TrackFind</strong></p>
-<p>TrackFind is a track search engine and metadata FAIRification service. TrackFind supports crawling of the Track Hub Registry and other data portals to fetch track metadata. Crawled metadata can be accessed through hierarchical browsing or by search queries, both through a web-based user interface, and as a REST API. TrackFind supports advanced SQL-based search queries that can be easily built in the user interface, and the search results can be browsed and exported in JSON or GSuite format. The RESTful API allows down-stream tools and scripts to easily integrate TrackFind search, currently demonstrated by the GSuite HyperBrowser, and soon by EPICO. For an more in-depth look at TrackFind, please take a look at the latest paper on the service: <a href="Kompova_GCC2019_TrackFind.pdf">TrackFind</a></p>
-<p>URL:&nbsp;<a href="https://trackfind.elixir.no/">https://trackfind.elixir.no/</a></p>
-<p>GitHub repository:&nbsp;<a href="https://github.com/elixir-no-nels/trackfind">https://github.com/elixir-no-nels/trackfind</a></p>
-<p>Documentation of TrackFind REST API:&nbsp;<a href="https://app.swaggerhub.com/apis-docs/dtitov/TrackFind/1.0.0">https://app.swaggerhub.com/apis-docs/dtitov/TrackFind/1.0.0</a></p>
-<p><img style="width: 15%;" src="trackfind_logo.png" /></p>
-<p>&nbsp;</p>
-<p><strong>TrackHub Registry</strong></p>
-<p>The Track Hub Registry services, maintained by EMBL-EBI, allows independent researchers to distribute their track hubs. Each track hub is a set of text files with links to data files, display configuration for each file, but also some metadata, which is used by the browsers to dynamically create selection menus. We extended the Track Hub Registry with support for distributing FAIRtracks-formatted metadata alongside the existing Track Hub metadata content, with the future goal of better integrating these. Also, the REST endpoints were improved to better support metadata queries by outside services.</p>
-<p>URL:&nbsp;<a href="https://www.trackhubregistry.org/">https://www.trackhubregistry.org/</a></p>
-<p>GitHub repository:&nbsp;&nbsp;<a href="https://github.com/Ensembl/trackhub-registry">https://github.com/Ensembl/trackhub-registry</a></p>
- <p><img style="width: 15%;" src="trackhub-logo.png" /></p>
-<p>&nbsp;</p>
-<p><strong>HyperBrowser TrackFind client</strong></p>
-<p>URL:&nbsp;<a href="https://hyperbrowser.uio.no/trackfind_test/">https://hyperbrowser.uio.no/trackfind_test/</a></p>
-<p>GitHub repository:&nbsp;<a href="https://github.com/hyperbrowser/genomic-hyperbrowser">https://github.com/hyperbrowser/genomic-hyperbrowser</a></p>
-<p><img style="width: 15%;" src="Logo-GSuite.png" /></p>
-<p>&nbsp;</p>
-<p><strong>Repositories with changes on EPICO system</strong></p>
-<p><img style="width: 15%;" src="EPICO-logo.svg.png" /></p>
-<p>GitHub repositories</p>
-<ul>
-<li>BP-Schema-tools (fairtracks branch): <a href="https://github.com/inab/BP-Schema-tools/tree/fairtracks" target="_blank" rel="noopener">https://github.com/inab/BP-Schema-tools/tree/fairtracks</a></li>
-<li>EPICO-data-loading-scripts (fairtracks branch): <a href="https://github.com/inab/EPICO-data-loading-scripts/tree/fairtracks" target="_blank" rel="noopener">https://github.com/inab/EPICO-data-loading-scripts/tree/fairtracks</a></li>
-<li>EPICO-data-model (fairtracks branch): <a href="https://github.com/inab/EPICO-data-model/tree/fairtracks" target="_blank" rel="noopener">https://github.com/inab/EPICO-data-model/tree/fairtracks</a></li>
-<li>EPICO-abstract-backend (master branch): <a href="https://github.com/inab/EPICO-abstract-backend" target="_blank" rel="noopener">https://github.com/inab/EPICO-abstract-backend</a></li>
-<li>EPICO-ES-backend (master branch): <a href="https://github.com/inab/EPICO-ES-backend" target="_blank" rel="noopener">https://github.com/inab/EPICO-ES-backend</a></li>
-<li>EPICO-FAIRTracks-backend (master branch): <a href="https://github.com/inab/EPICO-ES-backend" target="_blank" rel="noopener">https://github.com/inab/EPICO-ES-backend</a></li>
-<li>EPICO-REST-API (fairtracks branch): <a href="https://github.com/inab/EPICO-REST-API/tree/fairtracks" target="_blank" rel="noopener">https://github.com/inab/EPICO-REST-API/tree/fairtracks</a></li>
-<li>EPICO Data Analysis Portal web frontend (in preparation): <a href="https://github.com/inab/epico-data-analysis-portal/tree/fairtracks">https://github.com/inab/epico-data-analysis-portal/tree/fairtracks</a></li>
-</ul>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p><img style="width: 70%;" src="All logos.png" /></p>
+<div class="bck">
+    <div class="section center">
+        <h2>Publications and presentations</h2>
+        <div class="subsection center row_dist">
+            <div class="center bottom text_center" style="width: 16vw">
+                <div style="width: 16vw; height: 9vw">
+                    <div class="center resp-container" >
+                        <iframe class="resp-iframe" src="https://www.youtube.com/embed/NCywi8Fsdzk"
+                                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <a style="padding-top: 1em" href="https://elixir-europe.org/events/elixir-webinar-fairification-genomic-tracks">
+                   ELIXIR Webinar, <br> 6 November 2019
+                </a>
+            </div>
+            <div class="center bottom text_center" style="width: 16vw">
+                <a style="padding-top: 1em" href="Gundersen_Elixir_all_hands_2019_FAIRification.pdf">
+                    <img style="width: 10vw; padding-bottom: 1em" src="Gundersen_Elixir_all_hands_2019_FAIRification.png"/>
+                    FAIRtracks poster, <br> ELIXIR All-hands 2019
+                </a>
+            </div>
+            <div class="center bottom text_center" style="width: 16vw">
+                <a href="Kompova_GCC2019_TrackFind.pdf">
+                    <img style="width: 10vw; padding-bottom: 1em" src="Kompova_GCC2019_TrackFind.png"/>
+                    TrackFind poster, <br> GCC 2019
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
+<div class="nobck">
+    <div class="section center">
+        <img style="width:30vw; margin-bottom: 1em" src="FairTracks logo.png"/>
+        <p>
+            FAIRtracks is a JSON Schema defining a draft standard for minimal genomic track
+            metadata. FAIRtracks is supported by the TrackHub registry, the TrackFind metadata
+            search and curation engine and the downstream track analysis tools GSuite HyperBrowser
+            and EPICO.
+        </p>
+        <p class="smallhead">GitHub repository of the FAIRtracks draft standard:</p>
+        <a class="paddingbottom" href="https://github.com/fairtracks/fairtracks_standard">
+            https://github.com/fairtracks/fairtracks_standard
+        </a>
+    </div>
+</div>
+<div class="bck">
+    <div class="section center">
+        <h2>FAIRtracks validator service</strong></h2>
+        <p>
+            The FAIRtracks validator is a JSON Schema validator, that is able to check
+            additional constraints specific to the FAIRtracks draft standard. Such extra
+            constraints have been declared using reference extensions on the JSON Schema
+            vocabulary.
+        </p>
+        <p class="smallhead">
+            The FAIRtracks validator is hosted online as a REST service:
+        </p>
+        <a href="http://fairtracks.bsc.es/api/">
+            http://fairtracks.bsc.es/api/
+        </a>
+        <p class="smallhead paddingtop">
+            The FAIRtracks validator can also be installed locally from this GitHub
+        repository:
+        </p>
+        <a href="https://github.com/fairtracks/fairtracks_validator">
+            https://github.com/fairtracks/fairtracks_validator
+        </a>
+        <p class="smallhead paddingtop">
+            Screencasts showing how to use the FAIRtracks validator:
+        </p>
+        <ul class="nomargin paddingbottom">
+            <li>Using REST API from command line:
+                <a href="https://asciinema.org/a/279246">
+                    https://asciinema.org/a/279246
+                </a>
+            </li>
+            <li>Installing and using command line validator (screencast):
+                <a href="https://asciinema.org/a/279252">
+                    https://asciinema.org/a/279252
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="nobck">
+    <div class="section center">
+        <img style="width: 20vw; margin-bottom: 1em" src="trackfind_logo.png"/>
+        <p>
+            TrackFind is a track search engine and metadata FAIRification service. TrackFind
+            supports crawling of the Track Hub Registry and other data portals to fetch track
+            metadata. Crawled metadata can be accessed through hierarchical browsing or by search
+            queries, both through a web-based user interface, and as a REST API. TrackFind supports
+            advanced SQL-based search queries that can be easily built in the
+            user interface, and the search results can be browsed and exported in JSON or GSuite
+            format. The RESTful API allows downstream tools and scripts to easily integrate
+            TrackFind search, as demonstrated by the GSuite HyperBrowser and EPICO.
+        </p>
+        <p class="smallhead">TrackFind is available with a web-based user interface from here:</p>
+        <a href="https://trackfind.elixir.no/">
+            https://trackfind.elixir.no/
+        </a>
+        <p class="smallhead paddingtop">
+            TrackFind is also available as a REST API, as documented here:
+        </p>
+        <a href="https://app.swaggerhub.com/apis-docs/dtitov/TrackFind/1.0.0">
+            https://app.swaggerhub.com/apis-docs/dtitov/TrackFind/1.0.0
+        </a>
+        <p class="smallhead paddingtop">GitHub repository for TrackFind:</p>
+        <a class="paddingbottom" href="https://github.com/elixir-no-nels/trackfind">
+            https://github.com/elixir-no-nels/trackfind
+        </a>
+
+    </div>
+</div>
+<div class="bck">
+    <div class="section center">
+        <img style="width: 20vw; margin-bottom: 1em" src="trackhub-logo.png"/>
+        <p>
+            The Track Hub Registry services, maintained by EMBL-EBI, allows independent researchers
+            to distribute their track hubs. Each track hub is a set of text files with links to
+            data files, display configuration for each file, but also some metadata, which is used
+            by the browsers to dynamically create selection menus. We extended the Track Hub
+            Registry with support for distributing FAIRtracks-formatted metadata alongside the
+            existing Track Hub metadata content, with the future goal of better integrating these.
+            Also, the REST endpoints were improved to better support metadata queries by outside
+            services, <em>e.g.</em>, TrackFind.
+        </p>
+        <p class="smallhead">URL to The Track Hub Registry:</p>
+        <a href="https://www.trackhubregistry.org/">
+            https://www.trackhubregistry.org/
+        </a>
+        <p class="smallhead paddingtop">GitHub repository for the Track Hub Registry:</p>
+        <a class="paddingbottom" href="https://github.com/Ensembl/trackhub-registry">
+            https://github.com/Ensembl/trackhub-registry
+        </a>
+    </div>
+</div>
+<div class="nobck">
+    <div class="section center">
+        <h2>TrackFind client in:</h2>
+        <img style="width: 30vw; margin-bottom: 1em" src="Logo-GSuite.png"/>
+        <p>
+            The GSuite HyperBrowser is a general purpose web-based platform for rigorous
+            statistical analysis of track data, built upon the Galaxy framework. The HyperBrowser
+            already has support for a track search mechanism (limited prototype), making use of the
+            <a href="http://www.gtrack.no/">GSuite format</a> to move collections of track data
+            (typically resulting from a track search operation) through both basic and advanced
+            data manipulation and analysis steps. A TrackFind client has been implemented to
+            replace the existing prototype, and proved to work with BLUEPRINT data.
+        </p>
+        <p class="smallhead">
+            A test version of GSuite HyperBrowser containing the TrackFind client tool is available
+            from the following URL:
+        </p>
+        <a href="https://hyperbrowser.uio.no/trackfind_test/">
+            https://hyperbrowser.uio.no/trackfind_test/
+        </a>
+        <p>
+            <div class="smallhead">Note:</div>
+            The TrackFind client tool is available from the left-hand tool menu, under the header
+            "Create a GSuite of genomic tracks". The name of the tool is: "Create a remote GSuite
+            from a public repository (TrackFind client)".
+        </p>
+        <p class="smallhead nomargintop">GitHub repository for GSuite HyperBrowser:</p>
+        <a class="paddingbottom" href="https://github.com/hyperbrowser/genomic-hyperbrowser">
+            https://github.com/hyperbrowser/genomic-hyperbrowser
+        </a>
+    </div>
+</div>
+<div class="bck">
+    <div class="section center">
+        <h2>TrackFind client in:</h2>
+        <img style="width: 20vw; margin-bottom: 1em" src="EPICO-logo.svg.png"/>
+        <p>
+            EPICO is an open-access reference set of tools, libraries and APIs to develop
+            comparative epigenomic data portals, as well as a data and metadata validator and
+            database loader. EPICO components work with a customizable, rich data model where
+            ontology term checks can be introduced for specific fields, as a generalization to
+            enumerated values. EPICO has been used to implement:
+        </p>
+        <a href="http://blueprint-data.bsc.es/">
+            The BLUEPRINT Data Analysis Portal
+        </a>
+        <p>
+            The BLUEPRINT Data Analysis Portal provides a virtual desktop for the comparative
+            analysis of epigenetic features, recorded features (genes, transcripts, etc.) and
+            pathways in the context of differentiation of hematopoietic lineages. The EPICO system
+            is modified to upload the FAIR metadata from TrackFind.
+        </p>
+        <p class="smallhead">GitHub repositories with changes on the EPICO system:</p>
+        <ul class="paddingbottom">
+            <li>BP-Schema-tools (fairtracks branch): <a
+                    href="https://github.com/inab/BP-Schema-tools/tree/fairtracks" target="_blank"
+                    rel="noopener">https://github.com/inab/BP-Schema-tools/tree/fairtracks</a></li>
+            <li>EPICO-data-loading-scripts (fairtracks branch): <a
+                    href="https://github.com/inab/EPICO-data-loading-scripts/tree/fairtracks"
+                    target="_blank"
+                    rel="noopener">https://github.com/inab/EPICO-data-loading-scripts/tree/fairtracks</a>
+            </li>
+            <li>EPICO-data-model (fairtracks branch): <a
+                    href="https://github.com/inab/EPICO-data-model/tree/fairtracks" target="_blank"
+                    rel="noopener">https://github.com/inab/EPICO-data-model/tree/fairtracks</a>
+            </li>
+            <li>EPICO-abstract-backend (master branch): <a
+                    href="https://github.com/inab/EPICO-abstract-backend" target="_blank"
+                    rel="noopener">https://github.com/inab/EPICO-abstract-backend</a>
+            </li>
+            <li>EPICO-ES-backend (master branch): <a
+                    href="https://github.com/inab/EPICO-ES-backend"
+                    target="_blank" rel="noopener">https://github.com/inab/EPICO-ES-backend</a>
+            </li>
+            <li>EPICO-FAIRTracks-backend (master branch): <a
+                    href="https://github.com/inab/EPICO-ES-backend"
+                    target="_blank" rel="noopener">https://github.com/inab/EPICO-ES-backend</a>
+            </li>
+            <li>EPICO-REST-API (fairtracks branch): <a
+                    href="https://github.com/inab/EPICO-REST-API/tree/fairtracks" target="_blank"
+                    rel="noopener">https://github.com/inab/EPICO-REST-API/tree/fairtracks</a></li>
+            <li>EPICO Data Analysis Portal web frontend (in preparation): <a
+                    href="https://github.com/inab/epico-data-analysis-portal/tree/fairtracks">https://github.com/inab/epico-data-analysis-portal/tree/fairtracks</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="nobck">
+    <div class="section center">
+    <img class="paddingtop paddingbottom" style="width: 70%;" src="All logos.png"/>
+    </div>
+</div>
+</body>
+</html>
