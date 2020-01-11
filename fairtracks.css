@@ -55,8 +55,9 @@ div.bck {
 div.nobck {
 }
 
-h1 h2 h3 {
-    color: #282625
+h1, h2, h3 {
+    color: #282625;
+    text-align: center;
 }
 
 h1 {
