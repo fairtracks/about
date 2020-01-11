@@ -7,14 +7,28 @@ body {
     width: 100%;
     color: #000000;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: calc(1.125em + 0.5vw);
-    font-size: -webkit-calc(112.5% + 0.5vw);
+    font-size: 100%;
     line-height: 1.5em;
     text-align: justify;
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility
+    text-rendering: optimizeLegibility;
 }
 
+/*Scales by 1px for every 100px from 600px onwards*/
+@media (min-width: 600px) {
+    body {
+        font-size: calc(1.125em + 4 * (100vw - 600px) / 400);
+        font-size: -webkit-calc(112.5% + 4 * (100vw - 600px) / 400);
+    }
+}
+
+/*Sets font-size to 22px after a viewport of 1000px*/
+@media (min-width: 1000px) {
+    body {
+        font-size: calc(1.375em);
+        font-size: -webkit-calc(137.5%);
+    }
+}
 div.section {
     margin: 0 auto;
     padding: 2em;
