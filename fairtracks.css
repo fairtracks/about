@@ -46,7 +46,6 @@ div.center {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 div.bottom {
@@ -55,10 +54,12 @@ div.bottom {
 
 div.row {
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 div.row_dist {
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
