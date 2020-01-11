@@ -1,9 +1,14 @@
+@-ms-viewport{
+  width: device-width;
+}
+
 body {
     display: block;
     width: 100%;
     color: #000000;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: calc(112.5% + 0.5vw);
+    font-size: calc(1.125em + 0.5vw);
+    font-size: -webkit-calc(112.5% + 0.5vw);
     line-height: 1.5em;
     text-align: justify;
     -webkit-font-smoothing: antialiased;
@@ -13,13 +18,13 @@ body {
 div.section {
     margin: 0 auto;
     padding: 2em;
-    width: 80vw;
+    width: 80%;
 }
 
 div.subsection {
     padding-bottom: 1em;
     padding-top: 1em;
-    width: 80vw;
+    width: 100%;
 }
 
 div.center {
@@ -80,6 +85,15 @@ img.left_img {
     padding-right: 50px
 }
 
+img{
+    max-width:100%;
+    max-height:100%;
+}
+
+ul {
+    text-align: left;
+}
+
 .resp-container {
     position: relative;
     overflow: hidden;
@@ -119,4 +133,9 @@ img.left_img {
 
 .text_center {
     text-align: center;
+}
+
+.caption {
+    font-size: 0.8em;
+    line-height: 1.5em;
 }
