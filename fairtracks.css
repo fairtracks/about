@@ -33,7 +33,7 @@ body {
 div.section {
     margin: 0 auto;
     padding: 2em;
-    width: 80%;
+    width: 80vw;
 }
 
 div.subsection {
@@ -156,4 +156,9 @@ ul {
 .caption {
     font-size: 0.8em;
     line-height: 1.5em;
+}
+
+.wrap {
+    word-break: break-all;
+    max-width: 100%;
 }
