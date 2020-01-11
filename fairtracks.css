@@ -12,6 +12,7 @@ body {
     text-align: justify;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    margin: 0;
 }
 
 /*Scales by 1px for every 100px from 600px onwards*/
