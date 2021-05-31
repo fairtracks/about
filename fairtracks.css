@@ -163,3 +163,9 @@ ul {
     word-break: break-all;
     max-width: 100%;
 }
+
+p.news {
+    font-size: 0.8em;
+    text-indent: -3em;
+    padding-left: 3em;
+}
